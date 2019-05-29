@@ -41,6 +41,6 @@ __Requirements:__
 __Deliverables:__
 - Completed, runnable code
 - A readme file containing the following:
-- An explanation as to why you picked the backend language that you did
-- Instruction on how to run the app
-- An explanation of the added feature and why you picked it
+  - An explanation as to why you picked the backend language that you did
+  - Instruction on how to run the app
+  - An explanation of the added feature and why you picked it
