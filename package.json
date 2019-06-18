@@ -4,10 +4,8 @@
   "description": "Part of the interview process with Vangst requires you to complete this take home assignment. There are two parts to this assignment, a full stack application, and an API/Data model design document. This repository is a starter for the full stack application.",
   "main": "index.js",
   "scripts": {
-    "run:client": "cd client && yarn start",
-    "run:server:java": "cd java && mvn spring-boot:run",
-    "run:server:kotlin": "cd kotlin && mvn spring-boot:run",
-    "run:server:node": "cd nodejs && yarn && yarn start"
+    "run:client": "cd client && yarn && yarn start",
+    "run:server": "cd server && yarn && yarn start"
   },
   "author": "",
   "license": "MIT"

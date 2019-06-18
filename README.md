@@ -12,20 +12,14 @@ yarn run:client
 This will start the frontend on localhost at port 3000.
 
 ### Backend 
-There are three options for the backend code:
-- Java
-- Kotlin
-- NodeJs/Express
 
-You may add your own backend if you would like to use a different language.
+You may add your own backend if you would like to use a different language for the new endpoint.
 
-You can start the backend by running one of the following commands
+You can start the backend by running the following command
 ``` bash
-yarn run:server:java
-yarn run:server:kotlin
-yarn run:server:node
+yarn run:server
 ```
-These will start the server in the respective language on port 8080.
+This will start the server on port 8080.
 
 # Full Stack App
 Create an application to help a user with their problem. The frontend needs to be in React but the backend can be in any language you would like. You should include at least one unit test for both backend and frontend. If you would like to style your application you may use any front end styling framework such as Material-ui or Bootstrap.
