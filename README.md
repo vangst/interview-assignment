@@ -21,20 +21,28 @@ yarn run:server
 ```
 This will start the server on port 8080.
 
+The Backend use an in-memory database called LokiJs. Docs on how to use this library can be found here: https://rawgit.com/techfort/LokiJS/master/jsdoc/index.html
+
 # Full Stack App
-Create an application to help a user with their problem. The frontend needs to be in React but the backend can be in any language you would like. You should include at least one unit test for both backend and frontend. If you would like to style your application you may use any front end styling framework such as Material-ui or Bootstrap.
+Welcome to the Flavor Rater App. This application allows you to create and store flavors of ice cream. It also allows you to keep ratings on the flavors so you can remember what flavors you like.
 
-__Problem Statement:__ I like to eat ice cream, but I can never remember what flavors I have had or what I thought of them.
+The Flavor rater app is great but it could use more features. Review the user story below and add the defined feature.
 
-__Requirements:__
-- I need to be able to add new flavors to my list and give them a rating
-- I need to be able to view all the flavors I have added
-- I need to be able to change a rating on a flavor
-- Add one more feature you think the user might like
+__Problem Statement:__ As a user of the Flavor Rater App I need to be able to search and filter my list of flavor so that I can find the flavors I'm looking for quickly.
+
+__Requirements:__  
+__When__ I am viewing my list of flavors  
+__Then__ I should be able to search by flavor name  
+__And__ I should be able to filter by tags  
+__And__ I should be able to filter by rating  
+__And__ I should be able to clear all filters
+
+This additional functionality will be very valuable for our users, however there is still a lot that can be done. So I would like for you to come up with one other feature or functionality you thing would be beneficial for the user and implement it. This is your chance to show off your strongest skill set. So if you are great a security add additional security, if css is your thing put in some animations. This is your opportunity to show us what you have to offer that might be different from someone else.
 
 __Deliverables:__
 - Completed, runnable code
 - A readme file containing the following:
-  - An explanation as to why you picked the backend language that you did
-  - Instruction on how to run the app
   - An explanation of the added feature and why you picked it
+
+#### How To Submit
+You can submit your solution by either creating a new branch on this project or you can use this repo as a template to copy it into your personal repo. Either way once you have completed send the link to the branch or repo to the recuiter you have been working with.
