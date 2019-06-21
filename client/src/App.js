@@ -1,25 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+import styled from 'styled-components';
+import axios from 'axios';
+import NewFlavorForm from './NewFlavorForm';
+import FlavorsList from './FlavorsList';
+
+const Wrapper = styled.div`
+  padding: 32px;
+`
 
 function App() {
+  const [ flavors, setFlavors ] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchFlavors = async () => {
+      const { data } = await axios('/flavors').catch(err => ({ err }));
+      setFlavors(data);
+    }
+
+    fetchFlavors();
+  }, [])
+
+  const addNewFlavor = async (newFlavor) => {
+    const { data } = await axios('/flavors', {
+      method: 'POST',
+      data: newFlavor,
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).catch(err => ({ err }));
+
+    setFlavors(prev => ([
+      ...prev,
+      data,
+    ]))
+  }
+
+  const updateFlavorRating = async ({ id, value }) => {
+    const { data } = await axios('/flavors', {
+      method: 'PUT',
+      data: {
+        id,
+        rating: value,
+      },
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).catch(err => ({ err }));
+
+    setFlavors(prev => prev.map(flavor => flavor.id === id ? data : flavor))
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper className="App">
+      <center>
+        <NewFlavorForm onClick={addNewFlavor}/>
+        <FlavorsList 
+          flavors={flavors} 
+          onRatingSelect={updateFlavorRating}
+        />
+      </center>
+    </Wrapper>
   );
 }
 
